@@ -1,5 +1,6 @@
 #!/bin/ksh
 
+cd $HOME
 mkdir scratch
 cd scratch
 maven_version=3.2.5
@@ -13,3 +14,5 @@ sudo cat << 'EOF' > /etc/profile.d/maven.sh
 export M2_HOME=/usr/local/maven
 export PATH=${M2_HOME}/bin:${PATH}
 EOF
+
+cd -
