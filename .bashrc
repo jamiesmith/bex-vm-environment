@@ -99,7 +99,7 @@ PATH="" export PATH
 
 Addpath .
 Addpath ~/bin
-Addpath ~/bin/findgrep
+Addpath ~/findgrep
 Addpath ~/GITROOT/interac_gateway_poc/scripts
 Addpath $SavePath
 # TMP Addpath $JAVA_HOME/bin
