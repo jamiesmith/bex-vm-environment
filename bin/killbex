@@ -1,0 +1,4 @@
+#!/bin/sh
+kill -9 $(ps -fu tibco --cols 1000 | grep /kabira | egrep -v "BUILD/dc|sslvpn|mysql|eclipse" | cut -c10-15)
+kill -9 $(ps -fu tibco --cols 1000 | grep /3rdparty | egrep -v "BUILD/dc|sslvpn|mysql|eclipse" | cut -c10-15)
+kill -9 $(ps -fu tibco --cols 1000 | grep slapd  | cut -c10-15)

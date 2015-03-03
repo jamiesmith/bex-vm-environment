@@ -1,0 +1,20 @@
+#!/bin/ksh
+
+
+command="swsrv -c clobber"
+
+if [ $# -ge 1 ]
+then
+        for node in $*
+        do
+                if [ -d $node -a -f $node/ossm ]
+                then
+                        $command -N ${node} -p ${node}
+                else
+                        echo "Skipping non-node $node"
+                fi
+        done
+                
+else
+        $command
+fi

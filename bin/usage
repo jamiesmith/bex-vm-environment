@@ -1,0 +1,3 @@
+#!/bin/sh
+
+du -ks $1* | awk '{printf("%9.9d    %s\n", $1, substr($0, index($0, $2)))}' | sort

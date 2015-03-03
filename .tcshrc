@@ -1,0 +1,22 @@
+if ($?USER == 0 || $?prompt == 0) exit
+
+
+#        settings  for interactive shells
+echo PROCESSING $HOME/.tcshrc.set
+source $HOME/.tcshrc.set
+
+#        aliases   for interactive shells
+echo PROCESSING $HOME/.tcshrc.alias
+source $HOME/.tcshrc.alias
+
+#        bindkeys   for interactive shells
+echo PROCESSING $HOME/.tcshrc.bindkey
+source $HOME/.tcshrc.bindkey
+
+#        completions for interactive shells
+echo PROCESSING $HOME/.tcshrc.complete
+source $HOME/.tcshrc.complete
+
+set prompt="%B%S%n@%m%s%b[%P]:%B%~ %b%# >"
+
+

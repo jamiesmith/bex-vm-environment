@@ -1,0 +1,134 @@
+alias h		history 25
+alias j		jobs -l
+
+alias ls 	ls -F
+
+set filec
+
+set __swhome=`basename $SW_HOME`
+
+set ellipsis
+set prompt = "%S%n@%B%M%b %s %P[$__swhome %.04]->"
+
+set autolist = ambiguous 
+setenv  EXINIT  'set autoindent'
+bindkey -e
+alias d       'dirs -l'
+alias pd      pushd
+alias pd2     pushd +2
+alias po      popd
+alias newf  "ls -lt \!* |head -25"
+
+# I keep typing this.
+#
+alias new	newf
+
+# umask sets a mask for the default file permissions
+umask 002
+
+
+# mesg controls messages from other users
+
+alias ls	"ls -F"
+alias l		"ls -l"
+alias la	"ls -la"
+alias ls	"ls -F"
+alias ll	"ls -lA"
+alias l		"ls -lA"
+
+alias h		"history 100"
+alias j		"jobs -l"
+
+alias d		"dirs -l"
+alias pd	"pushd"
+alias pd2	"pushd +2"
+alias po	"popd"
+
+alias md	"mkdir"
+
+alias rd	"rm -r"
+alias p		"less -c"
+alias me	"ps -fu $USER"
+alias megrep    "ps -fu $USER | grep \!*"
+alias l		"ls -lF"
+alias L		"ls -lLF"
+alias clean	"rm *~ .*~"
+alias ups       "/usr/ucb/ps -aguxww"
+alias ugrep       "/usr/ucb/ps -aguxww| grep $USER |grep "
+alias hgrep     "history 1000 | grep "
+alias rgrep	"find . -type f | xargs -n1 grep" 
+alias rcp       "rcp -p"
+alias myp       "ps -ef | grep $USER | grep \!* | awk '{print $2}'"
+alias l1	"ls -1"
+alias ww	"chmod +w \!*"
+alias we	"chmod +w \!* ; emacs -nw \!*"
+alias wa	"chmod +w \!* ; sw_sccs add \!*"
+alias wae	"chmod +w \!* ; sw_sccs add \!* ; emacs -nw \!*"
+alias xe	"chmod +x"
+alias gli	"grep -li"
+
+# alias saveman   "man \!*  | col -b > $HOME/mantext/\!*"
+
+alias ume       "/usr/ucb/ps -aguxww | grep $USER"
+alias s         "sw_sccs"
+alias emx 	"emacs -nw"
+
+# alias sg 'set mydir=`pwd`;cd `echo $mydir | sed "s/sol/generic/"`'
+
+alias scd 'set mydir=`pwd`;cd `echo $mydir | sed "s/\!:1/\!:2/"`'
+
+alias gs 'scd generic sol'
+alias sg 'scd sol generic'
+
+alias st 'scd src test'
+alias ts 'scd test src'
+
+alias mcd 	"mkdir -p \!* ; cd \!*"
+alias cd.	"cd .."
+alias cd..	"cd .."
+alias cd...	"cd ../../.."
+alias cd....	"cd ../../../.."
+alias o		"top -b 40"
+alias ge 	"sw_sccs get \!* ; emacs \!*"
+
+alias pn	"ps -fu nightly"
+alias prs	"sw_sccs prs"
+alias x		emacs
+
+alias jri cd $SW_HOME/jri/
+
+setenv TESTROOT mipsplustest
+alias px "pd $SW_HOME/$TESTROOT/\!*"
+alias cx "cd $SW_HOME/$TESTROOT/\!*"
+alias ex "emacs $SW_HOME/$TESTROOT/\!*"
+alias tx "tail -f $SW_HOME/$TESTROOT/\!*"
+alias mx "more $SW_HOME/$TESTROOT/\!*"
+
+alias zx "cd $SW_HOME/mipsplustest/mipstest/sol/test"
+alias zc "cd $SW_HOME/mipsplustest/mipstest/sol/testconf"
+
+alias ph "pd $POC_GIT_ROOT/\!*"
+alias ch "cd $POC_GIT_ROOT/\!*"
+alias eh "emacs $POC_GIT_ROOT/\!*"
+alias th "tail -f $POC_GIT_ROOT/\!*"
+alias mh "more $POC_GIT_ROOT/\!*"
+
+alias myprocs "/usr/ucb/ps -aguxww | grep jsmith"
+
+# My Workspace versions
+#
+setenv WORKSPACE_ROOT $HOME/workspace
+alias pw "pd $WORKSPACE_ROOT/\!*"
+alias cw "cd $WORKSPACE_ROOT/\!*"
+alias ew "emacs $WORKSPACE_ROOT/\!*"
+alias tw "tail -f $WORKSPACE_ROOT/\!*"
+
+# this ip is deebee
+#
+alias kssh kabirassh
+
+alias aa cd ~/$POC_GIT_ROOT
+alias bexnodes test-server.ksh
+alias sn start-nodes.ksh
+
+echo DONE WITH ALIAS
