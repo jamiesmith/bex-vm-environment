@@ -32,3 +32,10 @@ done
 
 mkdir -p $HOME/bin
 cp -r ./bin $HOME/
+
+cd $HOME/
+
+## install some other stuff
+#
+./install-maven.ksh
+
