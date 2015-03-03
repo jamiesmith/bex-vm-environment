@@ -15,6 +15,6 @@ export M2_HOME=/usr/local/maven
 export PATH=${M2_HOME}/bin:${PATH}
 EOF
 
-sudo mv maven.sh /etc/profile.d/.
-
+sudo mv maven.sh /etc/profile.d/maven.sh
+sudo chown root:root /etc/profile.d/maven.sh
 cd -
