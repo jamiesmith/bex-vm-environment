@@ -9,7 +9,7 @@ sudo tar xzf apache-maven-${maven_version}-bin.tar.gz -C /usr/local
 cd /usr/local
 sudo ln -s apache-maven-${maven_version} maven
 cd -
-cat << 'EOF' > /etc/profile.d/maven.sh
+sudo cat << 'EOF' > /etc/profile.d/maven.sh
 export M2_HOME=/usr/local/maven
 export PATH=${M2_HOME}/bin:${PATH}
 EOF
