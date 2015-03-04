@@ -140,3 +140,8 @@ PS1="\e[1m\u@\h\e[m[\t]\w % > "
 
 Setenv TERM vt102
 SetenvDir POC_GIT_ROOT=$HOME/GITROOT/interac_gateway_poc
+
+if [ -f $HOME/.amazon_aws ]
+then
+    . $HOME/.amazon_aws
+fi
