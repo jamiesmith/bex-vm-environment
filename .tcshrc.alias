@@ -132,3 +132,4 @@ alias bexnodes test-server.ksh
 alias sn start-nodes.ksh
 
 echo DONE WITH ALIAS
+alias rehahs rehash
