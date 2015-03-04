@@ -13,6 +13,7 @@ function linkUpFile
 	mv "${destFile}" "${destFile}.bootstrap" 
     fi
 
+    echo ln -s "$(pwd)/$file" "${destFile}"
     ln -s "$(pwd)/$file" "${destFile}"
 }
 
