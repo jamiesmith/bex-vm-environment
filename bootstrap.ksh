@@ -1,21 +1,26 @@
 #!/bin/ksh
 
-# link the files in the bootstrap to their same counterpart in $HOME/
+# link the files in the bootstrap to their same counterpart in 
 
 function linkUpFile
 {
     typeset file=$1
     echo $file
     
-    destFile="$HOME/$file"
+    destFile="${homedir}/$file"
     if [ -f "${destFile}" ]
     then
-	mv "${destFile}" "${destFile}.bootstrap" 
+	mv "${destFile}" "$$SSH ${SSH_USER}@${publicip} echo ok
+
+{destFile}.bootstrap" 
     fi
 
     echo ln -s "$(pwd)/$file" "${destFile}"
     ln -s "$(pwd)/$file" "${destFile}"
 }
+
+homedir=$(pwd)
+echo "HOMEDIR BETTER BE: ${homedir}"
 
 path_to_files=$(dirname $0)
 cd ${path_to_files}
@@ -31,10 +36,10 @@ do
 	
 done
 
-mkdir -p $HOME/bin
-cp -r ./bin $HOME/
+mkdir -p ${homedir}/bin
+cp -r ./bin ${homedir}/
 
-cd $HOME/
+cd ${homedir}/
 
 ## install some other stuff
 #
