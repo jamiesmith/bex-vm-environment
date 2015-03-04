@@ -43,5 +43,6 @@ cd ${homedir}/
 
 ## install some other stuff
 #
+${path_to_files}/install-java.ksh
 ${path_to_files}/install-maven.ksh
 
