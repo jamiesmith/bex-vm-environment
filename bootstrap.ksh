@@ -37,5 +37,5 @@ cd $HOME/
 
 ## install some other stuff
 #
-./${path_to_files}/install-maven.ksh
+${path_to_files}/install-maven.ksh
 
