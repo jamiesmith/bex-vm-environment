@@ -133,3 +133,6 @@ alias sn start-nodes.ksh
 
 echo DONE WITH ALIAS
 alias rehahs rehash
+
+alias vsvndifflast svn diff --diff-cmd='meld' -r PREV:COMMITTED
+alias vsvndiff svn diff --diff-cmd='meld'
